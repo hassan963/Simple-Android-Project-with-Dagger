@@ -41,4 +41,11 @@ dependencies {
     implementation "com.github.bumptech.glide:glide:$glide_version"
     annotationProcessor "com.github.bumptech.glide:compiler:$glide_version"
 
+    def lifecycle_version = "2.2.0-alpha03";
+    implementation "androidx.lifecycle:lifecycle-extensions:$lifecycle_version"
+
+    def retrofit_version = "2.6.1"
+    implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
+    implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
+
 }
