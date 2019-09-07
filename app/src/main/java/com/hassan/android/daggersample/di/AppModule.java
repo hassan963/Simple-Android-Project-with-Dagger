@@ -10,6 +10,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.RequestManager;
 import com.bumptech.glide.request.RequestOptions;
 import com.hassan.android.daggersample.R;
+import com.hassan.android.daggersample.models.User;
 import com.hassan.android.daggersample.util.Constants;
 
 import javax.inject.Singleton;
@@ -53,4 +54,5 @@ public class AppModule {
     static Drawable provideAppDrawable(Application application) {
         return ContextCompat.getDrawable(application, R.drawable.logo);
     }
+
 }
