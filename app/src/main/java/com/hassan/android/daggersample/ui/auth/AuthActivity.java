@@ -3,6 +3,7 @@ package com.hassan.android.daggersample.ui.auth;
 import androidx.lifecycle.Observer;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.content.Intent;
 import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -16,6 +17,7 @@ import android.widget.Toast;
 import com.bumptech.glide.RequestManager;
 import com.hassan.android.daggersample.R;
 import com.hassan.android.daggersample.models.User;
+import com.hassan.android.daggersample.ui.main.MainActivity;
 import com.hassan.android.daggersample.viewmodels.ViewModelProviderFactory;
 
 import javax.inject.Inject;
@@ -77,6 +79,7 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
                         case AUTHENTICATED:{
                             showProgressBar(false);
                             Log.d(TAG, "onChanged: " + userAuthResource.data.getEmail());
+                            onLoginScreen();
                             break;
                         }
                         case NOT_AUTHENTICATED:{
@@ -95,6 +98,12 @@ public class AuthActivity extends DaggerAppCompatActivity implements View.OnClic
         } else {
             progressBar.setVisibility(View.INVISIBLE);
         }
+    }
+
+    private void onLoginScreen() {
+        Intent intent = new Intent(this, MainActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     private void setLogo() {
