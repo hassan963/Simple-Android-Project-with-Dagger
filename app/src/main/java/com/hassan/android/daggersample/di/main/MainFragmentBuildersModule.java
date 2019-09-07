@@ -1,6 +1,7 @@
 package com.hassan.android.daggersample.di.main;
 
 
+import com.hassan.android.daggersample.ui.main.posts.PostsFragment;
 import com.hassan.android.daggersample.ui.main.profile.ProfileFragment;
 
 import dagger.Module;
@@ -11,5 +12,8 @@ public abstract class MainFragmentBuildersModule {
 
     @ContributesAndroidInjector
     abstract ProfileFragment contributeProfileFragment();
+
+    @ContributesAndroidInjector
+    abstract PostsFragment contributePostsFragment();
 
 }

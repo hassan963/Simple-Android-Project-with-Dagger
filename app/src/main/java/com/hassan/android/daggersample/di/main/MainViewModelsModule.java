@@ -3,6 +3,7 @@ package com.hassan.android.daggersample.di.main;
 import androidx.lifecycle.ViewModel;
 
 import com.hassan.android.daggersample.di.ViewModelKey;
+import com.hassan.android.daggersample.ui.main.posts.PostsViewModel;
 import com.hassan.android.daggersample.ui.main.profile.ProfileViewModel;
 
 import dagger.Binds;
@@ -16,4 +17,9 @@ public abstract class MainViewModelsModule {
     @IntoMap
     @ViewModelKey(ProfileViewModel.class)
     public abstract ViewModel bindProfileViewModel(ProfileViewModel viewModel);
+
+    @Binds
+    @IntoMap
+    @ViewModelKey(PostsViewModel.class)
+    public abstract ViewModel bindPostsViewModel(PostsViewModel viewModel);
 }
